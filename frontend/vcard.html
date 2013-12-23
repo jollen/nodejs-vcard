@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <script id='vcardTemplate' type='text/x-jquery-tmpl'>
+      <h2>${Name}</h2>
+      <p>${ReleaseYear}</p>
+  </script>
+  <body>
+    <h1>Cards</h1>
+    <div id="userList"></div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.tmpl.min.js" type="text/javascript"></script>
+    <script>
+    $(document).ready(function () {
+      var vcard = [
+          { Name: "The Red Violin", ReleaseYear: "1998" },
+          { Name: "Eyes Wide Shut", ReleaseYear: "1999" },
+          { Name: "The Inheritance", ReleaseYear: "1976" }
+        ];
+
+      $("#vcardTemplate").tmpl(vcard)
+          .appendTo( "#userList" );
+    });
+    </script>
+  </body>
+</html>
